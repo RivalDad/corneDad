@@ -26,9 +26,9 @@
             // | SHFT |  Z  |  X  |  C  |  V  |  B  |       |  N   |  M  |  ,  |  .  |  /  | LGUI |
             //                    | LWR/MOUSE | RET | BSPC|       | TAB | SPACE| ALT |
             bindings = <
-                &mo 2     &kp Q     &kp W     &kp E     &kp R     &kp T         &kp Y      &kp U     &kp I     &kp O     &kp P      &kp MINUS
+                &mo RAISE     &kp Q     &kp W     &kp E     &kp R     &kp T         &kp Y      &kp U     &kp I     &kp O     &kp P      &kp MINUS
                 &kp LCTRL &kp A     &kp S     &kp D     &kp F     &kp G         &kp H      &kp J     &kp K     &kp L     &kp SEMI   &kp SQT
-                &kp LSHFT  &kp Z     &kp X     &kp C     &kp V    &kp B         &kp N     &kp M     &kp COMMA &kp DOT  &kp FSLH   &kp LGUI 
+                &kp LSHFT  &kp Z     &kp X     &kp C     &kp V    &kp B         &kp N     &kp M     &kp COMMA &kp DOT  &kp FSLH   &mo MOUSE
                               &lt LOWER MOUSE    &kp RET   &kp BSPC                &kp TAB    &kp SPACE &kp RALT
             >;
         };
@@ -64,12 +64,12 @@
             // -----------------------------------------------------------------------------------------
             // |       |       |       |       |       |       |     |    | LCLK |  UP  | RCLK |       |       |
             // |       |       |       |       |       |       |     |    |  SCRL_Left | LEFT  | DOWN | RIGHT|  SCRL_RIGHT |       |
-            // |       |       |       |       |       |       |     |    |       | S-DWN | MMB  | S-UP |       |       |
+            // |       |       |       |       |       |       |     |    |       | S-DWN | MMB  | S-UP |       |  DEFAULT     |
             //                    |       |       |       |       |       |       |
             bindings = <
                 &none    &none    &none    &none    &none    &none          &none   &mkp LCLK  &mmv MOVE_UP &mkp RCLK  &none    &none
                 &none    &none    &none    &none    &none    &none          &msc SCRL_LEFT   &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &msc SCRL_RIGHT   &none
-                &none    &none    &none    &none    &none    &none          &none    &msc SCRL_DOWN &mkp MCLK    &msc SCRL_UP  &none    &none
+                &none    &none    &none    &none    &none    &none          &none    &msc SCRL_DOWN &mkp MCLK    &msc SCRL_UP  &none    &mo DEFAULT
                                 &none    &none    &none                     &none    &none      &none
             >;
         };
