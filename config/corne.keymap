@@ -23,13 +23,13 @@
             // -----------------------------------------------------------------------------------------
             // |  L2  |  Q  |  W  |  E  |  R  |  T  |       |  Y  |  U   |  I  |  O  |  P  |  -   |
             // | CTRL |  A  |  S  |  D  |  F  |  G  |       |  H  |  J   |  K  |  L  |  ;  |  '   |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  |       |  N   |  M  |  ,  |  .  |  /  | LGUI |
-            //                    | LWR/MOUSE | RET | BSPC|       | TAB | SPACE| ALT |
+            // | SHFT |  Z  |  X  |  C  |  V  |  B  |       |  N   |  M  |  ,  |  .  |  /  | MOUSE|
+            //                    | LOWER   | RET | BSPC|       | TAB | SPACE| ALT |
             bindings = <
                 &mo RAISE     &kp Q     &kp W     &kp E     &kp R     &kp T         &kp Y      &kp U     &kp I     &kp O     &kp P      &kp MINUS
-                &kp LCTRL &kp A     &kp S     &kp D     &kp F     &kp G         &kp H      &kp J     &kp K     &kp L     &kp SEMI   &kp SQT
-                &kp LSHFT  &kp Z     &kp X     &kp C     &kp V    &kp B         &kp N     &kp M     &kp COMMA &kp DOT  &kp FSLH   &lt MOUSE
-                              &lt LOWER   &kp RET   &kp BSPC                &kp TAB    &kp SPACE &kp RALT
+                &kp LCTRL     &kp A     &kp S     &kp D     &kp F     &kp G         &kp H      &kp J     &kp K     &kp L     &kp SEMI   &kp SQT
+                &kp LSHFT     &kp Z     &kp X     &kp C     &kp V     &kp B         &kp N      &kp M     &kp COMMA &kp DOT   &kp FSLH   &lt 3
+                              &lt 1       &kp RET   &kp BSPC                &kp TAB    &kp SPACE &kp RALT
             >;
         };
 
@@ -37,15 +37,16 @@
             // -----------------------------------------------------------------------------------------
             // |  L2  |  1  |  2  |  3  |  4  |  5  |       |  6  |  7  |  8  |  9  |  0  | BSPC |
             // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |       |     |     | UP  |     |     | DEL  |
-            // | LCTRL |     |    |     |     |     |       |     |LEFT |DOWN |RIGHT|     |      |
+            // | LCTRL|     |     |     |     |     |       |     |LEFT |DOWN |RIGHT|     |      |
             //                    | GUI | RET | BSPC |       | TAB | SPACE| ALT |
             bindings = <
-                &mo 2      &kp N1       &kp N2       &kp N3       &kp N4       &kp N5        &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp BSPC
+                &mo RAISE  &kp N1       &kp N2       &kp N3       &kp N4       &kp N5        &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp BSPC
                 &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4  &trans      &trans      &kp UP      &trans      &trans      &kp DEL
                 &kp LCTRL  &trans       &trans       &trans       &trans       &trans        &trans      &kp LEFT    &kp DOWN    &kp RIGHT   &trans      &trans
-                                  &kp LGUI     &kp RET     &kp BSPC                 &kp TAB    &kp SPACE &kp RALT
+                              &kp LGUI     &kp RET     &kp BSPC                 &kp TAB    &kp SPACE &kp RALT
             >;
         };
+
         raise_layer {
             // -----------------------------------------------------------------------------------------
             // |  L2  |  !  |  @  |  #  |  $  |  %  |       |  ^  |  &  |  *  |  (  |  )  | BSPC |
@@ -53,17 +54,18 @@
             // | LCTRL|     |     |     |     |     |       |  _  |  +  |  {  |  }  | "|" |  ~   |
             //                    | GUI | RET | TAB |       | SPC |     | ALT |
             bindings = <
-                &mo 2     &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
-                &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
-                &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
+                &mo LOWER   &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
+                &kp LSHFT   &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
+                &kp LCTRL   &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
                               &kp LGUI     &kp RET  &kp TAB                &kp SPACE &trans    &kp RALT
             >;
         };
+
         mouse_layer {
             // -----------------------------------------------------------------------------------------
-            // |       |       |       |       |       |       |     |    | LCLK |  UP  | RCLK |       |       |
-            // | VOL+  | PREV  | PLAY  | NEXT  | MUTE  |       |     |    |  SCRL_Left | LEFT  | DOWN | RIGHT|  SCRL_RIGHT |       |
-            // | VOL-  |       |       |       |       |       |     |    |       | S-DWN | MMB  | S-UP |       |  DEFAULT     |
+            // |       |       |       |       |       |       |     | LCLK |  UP  | RCLK  |       |       |
+            // | VOL+  | PREV  | PLAY  | NEXT  | MUTE  |       |LEFT | DOWN |RIGHT |       |       |       |
+            // | VOL-  |       |       |       |       |       |S-DWN| MMB  |S-UP  |       |       | LWR   |
             //                    |       |       |       |       |       |       |
             bindings = <
                 &none    &none    &none    &none    &none    &none          &none   &mkp LCLK  &mmv MOVE_UP &mkp RCLK  &none    &none
